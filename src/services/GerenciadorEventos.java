@@ -1,4 +1,4 @@
-package Eventos;
+package services;
 public class GerenciadorEventos {
 
 	public static void main(String[] args) {
