@@ -1,10 +1,12 @@
-package Model;
+package model;
 import java.util.Date;
+import java.util.List;
 
 public class Evento {
 
 	private String nome;
 	private Date data;
+	private List<Ingresso> ingressos;
 
 	public String getNome() {
 		return nome;
@@ -22,4 +24,7 @@ public class Evento {
 		this.data = data;
 	}
 
+	public List<Ingresso> getIngressos(){
+		return ingressos;
+	}
 }

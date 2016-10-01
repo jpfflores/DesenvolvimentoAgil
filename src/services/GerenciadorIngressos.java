@@ -1,38 +1,29 @@
 package services;
 
-import Model.Ingresso;
-import Enums.CategoriaIngresso;
+import model.Ingresso;
+import model.ValidacaoEventoException;
+import enums.CategoriaIngresso;
 
 public class GerenciadorIngressos {
 	
-	public Ingresso getVIP() {
-		Ingresso ingresso = new Ingresso();			
-		ingresso.setCategoria(CategoriaIngresso.VIP);
-		ingresso.setValor(1000.00);	
+	public  Ingresso gerarIngresso(CategoriaIngresso categoriaIngresso) {
+	
+		switch(categoriaIngresso){
+	
+		case VIP:
+			return new Ingresso(CategoriaIngresso.VIP, 1000);
+		case BACKSTAGE:
+			return new Ingresso(CategoriaIngresso.BACKSTAGE, 800);
+		case PLATEIA_VIP:
+			return new Ingresso(CategoriaIngresso.PLATEIA_VIP, 500);
+		case PLATEIA:
+			return new Ingresso(CategoriaIngresso.PLATEIA, 300);
+		}
 		
-		return ingresso;
+		throw new ValidacaoEventoException("Categoria de ingresso não existe.");
 	}
+	
+	
 
-	public Ingresso getBackStage() {
-		Ingresso ingresso = new Ingresso();			
-		ingresso.setCategoria(CategoriaIngresso.BACKSTAGE);
-		ingresso.setValor(800.00);	
-		
-		return ingresso;
-	}
-
-	public Ingresso getPlateiaVip() {
-		Ingresso ingresso = new Ingresso();			
-		ingresso.setCategoria(CategoriaIngresso.PLATEIA_VIP);
-		ingresso.setValor(500.00);	
-		
-		return ingresso;
-	}
-	public Ingresso getBackPlateia() {
-		Ingresso ingresso = new Ingresso();			
-		ingresso.setCategoria(CategoriaIngresso.PLATEIA);
-		ingresso.setValor(300.00);	
-		
-		return ingresso;
-	}
+	
 }

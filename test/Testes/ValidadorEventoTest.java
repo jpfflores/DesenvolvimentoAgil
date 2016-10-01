@@ -1,18 +1,18 @@
 package Testes;
 
 
+import static org.junit.Assert.fail;
+
+import java.util.Date;
+
+import model.Evento;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.LocalDate;
-
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-import Model.Evento;
-import services.*;
-
-import java.util.Date;
+import services.ValidadorEvento;
 
 public class ValidadorEventoTest {
 

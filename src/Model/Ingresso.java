@@ -1,25 +1,23 @@
-package Model;
-import Enums.CategoriaIngresso;
+package model;
 
+import enums.CategoriaIngresso;
 public class Ingresso {
 
-	private CategoriaIngresso categoria;
-	private Double valor;
+	private double m_Valor;
+	private CategoriaIngresso m_Tipo;
 
-	public CategoriaIngresso getCategoria() {
-		return categoria;
+	public Ingresso(CategoriaIngresso tipo, double valor) {
+		m_Tipo = tipo;
+		m_Valor = valor;
+		
+	}
+	
+	public CategoriaIngresso getTipo() {
+		return m_Tipo;
 	}
 
-	public void setCategoria(CategoriaIngresso categoria) {
-		this.categoria = categoria;
-	}
-
-	public Double getValor() {
-		return valor;
-	}
-
-	public void setValor(Double valor) {
-		this.valor = valor;
+	public double getValor() {
+		return m_Valor;
 	}
 
 }

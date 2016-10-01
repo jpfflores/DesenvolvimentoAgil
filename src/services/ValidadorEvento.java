@@ -1,9 +1,12 @@
 package services;
 
 import java.util.Date;
+import java.util.List;
 
-import Model.Evento;
-import Model.ValidacaoEventoException;
+import enums.CategoriaIngresso;
+import model.Evento;
+import model.Ingresso;
+import model.ValidacaoEventoException;
 
 
 public class ValidadorEvento {
@@ -13,6 +16,7 @@ public class ValidadorEvento {
 		testaDataPreenchida(evento);
 		testaTamanhoNome(evento);
 		testaDataMaiorQueAtual(evento);
+		testaIngressoDuplicado(evento);
 	}
 
 	public void testaNomePreenchido(Evento evento) {
@@ -38,6 +42,10 @@ public class ValidadorEvento {
 		Date dataAtual = new Date();
 		if( dataAtual.compareTo(evento.getData()) > 0)
 			throw new ValidacaoEventoException("A data do evento deve ser maior ou igual a data de hoje");
+		
+	}
+	
+	public void testaIngressoDuplicado(Evento evento){
 		
 	}
 	
