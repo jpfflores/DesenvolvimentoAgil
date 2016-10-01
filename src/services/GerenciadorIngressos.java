@@ -5,11 +5,11 @@ import model.ValidacaoEventoException;
 import enums.CategoriaIngresso;
 
 public class GerenciadorIngressos {
-	
-	public  Ingresso gerarIngresso(CategoriaIngresso categoriaIngresso) {
-	
-		switch(categoriaIngresso){
-	
+
+	public Ingresso gerarIngresso(CategoriaIngresso categoriaIngresso) {
+
+		switch (categoriaIngresso) {
+
 		case VIP:
 			return new Ingresso(CategoriaIngresso.VIP, 1000);
 		case BACKSTAGE:
@@ -19,11 +19,8 @@ public class GerenciadorIngressos {
 		case PLATEIA:
 			return new Ingresso(CategoriaIngresso.PLATEIA, 300);
 		}
-		
+
 		throw new ValidacaoEventoException("Categoria de ingresso nao existe.");
 	}
-	
-	
 
-	
 }

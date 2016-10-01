@@ -22,13 +22,13 @@ public class ValidadorEventoTest {
 	private static final String NAME_MUST_BE_FILLED = "O nome deve ser preenchido";
 	private static final int MAX_NAME_CHARACTERS = 150;
 	private static final String MAX_NAME_CHARACTERS_MESSAGE = "O nome permite no maximo 150 caracteres";
-	
+	/*
 	@Test
 	
 	public void testaValidadorEventos(){
 		
 	}
-	
+	*/
 	@Test
 	public void testaValidaNomePreenchidoVazio(){
 		Evento evento = new Evento();
@@ -103,7 +103,6 @@ public class ValidadorEventoTest {
 	@Test
 	public void testaValidaDataPreenchidaMaiorQueAtual(){
 		Evento evento = new Evento();
-		Date dataAtual = new Date();
 		evento.setData(TODAY.plusDays(5).toDate());
 		ValidadorEvento valEvento = new ValidadorEvento();
 		
