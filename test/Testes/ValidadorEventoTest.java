@@ -2,20 +2,16 @@ package Testes;
 
 
 import static org.junit.Assert.fail;
-
-import java.util.Date;
-
 import model.Evento;
-import model.Ingresso;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 
-import enums.CategoriaIngresso;
 import services.GerenciadorIngressos;
 import services.ValidadorEvento;
+import enums.CategoriaIngresso;
 
 public class ValidadorEventoTest {
 
@@ -108,10 +104,7 @@ public class ValidadorEventoTest {
 		Evento evento = new Evento();
 		evento.setData(TODAY.plusDays(5).toDate());
 		ValidadorEvento valEvento = new ValidadorEvento();
-		
 		valEvento.testaDataPreenchida(evento);
-
-		
 
 	}
 	

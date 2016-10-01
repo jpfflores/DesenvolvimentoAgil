@@ -30,7 +30,6 @@ public class ValidadorEvento {
 	}
 
 	public void testaTamanhoNome(Evento evento) {
-
 		if (evento.getNome().length() > 150)
 			throw new ValidacaoEventoException("O nome permite no maximo 150 caracteres");
 	}
@@ -43,12 +42,11 @@ public class ValidadorEvento {
 	}
 
 	public void testaIngressoDuplicado(Evento evento) {
-			HashSet<Integer> localIngressos = new HashSet<Integer>();
-			for(Iterator<Ingresso> i = evento.getIngressos().iterator(); i.hasNext(); ) {
-			    localIngressos.add( Integer.valueOf( (int) i.next().getValor()) );
-			}
-			if (evento.getIngressos().size() != localIngressos.size())
-				throw new ValidacaoEventoException("Ingresso duplicado");
+		HashSet<Integer> localIngressos = new HashSet<Integer>();
+		for (Iterator<Ingresso> i = evento.getIngressos().iterator(); i.hasNext();)
+			localIngressos.add(Integer.valueOf((int) i.next().getValor()));
+		if (evento.getIngressos().size() != localIngressos.size())
+			throw new ValidacaoEventoException("Ingresso duplicado");
 	}
 
 }
