@@ -20,7 +20,7 @@ public class GerenciadorIngressos {
 			return new Ingresso(CategoriaIngresso.PLATEIA, 300);
 		}
 		
-		throw new ValidacaoEventoException("Categoria de ingresso não existe.");
+		throw new ValidacaoEventoException("Categoria de ingresso nao existe.");
 	}
 	
 	

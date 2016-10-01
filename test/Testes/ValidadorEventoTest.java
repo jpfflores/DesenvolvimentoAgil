@@ -21,7 +21,7 @@ public class ValidadorEventoTest {
 	private static final String DATE_MUST_BE_FILLED = "A data deve ser preenchido";
 	private static final String NAME_MUST_BE_FILLED = "O nome deve ser preenchido";
 	private static final int MAX_NAME_CHARACTERS = 150;
-	private static final String MAX_NAME_CHARACTERS_MESSAGE = "O nome permite no máximo 150 caracteres";
+	private static final String MAX_NAME_CHARACTERS_MESSAGE = "O nome permite no maximo 150 caracteres";
 	
 	@Test
 	
@@ -35,7 +35,7 @@ public class ValidadorEventoTest {
 		ValidadorEvento valEvento = new ValidadorEvento();
 		try {
 			valEvento.testaNomePreenchido(evento);
-			fail("Deveria ter gerado exceção");
+			fail("Deveria ter gerado excecao");
 		} catch (Exception e) {
 			Assert.assertEquals(NAME_MUST_BE_FILLED,e.getMessage());
 		}
@@ -82,7 +82,7 @@ public class ValidadorEventoTest {
 		ValidadorEvento valEvento = new ValidadorEvento();
 		try {
 			valEvento.testaDataPreenchida(evento);
-			fail("Deveria ter gerado exceção");
+			fail("Deveria ter gerado excecao");
 		} catch (Exception e) {
 			Assert.assertEquals(DATE_MUST_BE_FILLED,e.getMessage());
 		}

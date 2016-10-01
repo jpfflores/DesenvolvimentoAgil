@@ -34,7 +34,7 @@ public class ValidadorEvento {
 	{
 
 		if (evento.getNome().length() > 150)
-			throw new ValidacaoEventoException("O nome permite no máximo 150 caracteres");
+			throw new ValidacaoEventoException("O nome permite no maximo 150 caracteres");
 	}
 
 	public void testaDataMaiorQueAtual(Evento evento)
