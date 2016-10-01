@@ -2,7 +2,6 @@ package services;
 
 import model.Ingresso;
 import model.ValidacaoIngressoException;
-import enums.CategoriaIngresso;
 
 
 public class ValidadorIngresso {
@@ -24,11 +23,11 @@ public class ValidadorIngresso {
 
 		case PLATEIA_VIP:
 			if(ingresso.getValor() != 500)
-				throw new ValidacaoIngressoException("O valor do ingresso VIP deve ser 500,00");
+				throw new ValidacaoIngressoException("O valor do ingresso PLATEIA_VIP deve ser 500,00");
 
 		case PLATEIA:
 			if(ingresso.getValor() != 300)
-				throw new ValidacaoIngressoException("O valor do ingresso VIP deve ser 300,00");
+				throw new ValidacaoIngressoException("O valor do ingresso PLATEIA deve ser 300,00");
 		default:
 			break;
 		}

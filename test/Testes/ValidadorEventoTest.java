@@ -16,18 +16,12 @@ import enums.CategoriaIngresso;
 public class ValidadorEventoTest {
 
 	private static final LocalDate TODAY = LocalDate.now();
-	private static final String DATE_FOR_CREATE_MESSAGE = "A data do evento deve ser igual ou maior que a de hoje";
+//	private static final String DATE_FOR_CREATE_MESSAGE = "A data do evento deve ser igual ou maior que a de hoje";
 	private static final String DATE_MUST_BE_FILLED = "A data deve ser preenchido";
 	private static final String NAME_MUST_BE_FILLED = "O nome deve ser preenchido";
-	private static final int MAX_NAME_CHARACTERS = 150;
-	private static final String MAX_NAME_CHARACTERS_MESSAGE = "O nome permite no maximo 150 caracteres";
-	/*
-	@Test
-	
-	public void testaValidadorEventos(){
-		
-	}
-	*/
+//	private static final int MAX_NAME_CHARACTERS = 150;
+//	private static final String MAX_NAME_CHARACTERS_MESSAGE = "O nome permite no maximo 150 caracteres";
+
 	@Test
 	public void testaValidaNomePreenchidoVazio(){
 		Evento evento = new Evento();
@@ -92,11 +86,7 @@ public class ValidadorEventoTest {
 		Evento evento = new Evento();
 		evento.setData(TODAY.toDate());
 		ValidadorEvento valEvento = new ValidadorEvento();
-		
 		valEvento.testaDataPreenchida(evento);
-
-		
-
 	}
 
 	@Test
