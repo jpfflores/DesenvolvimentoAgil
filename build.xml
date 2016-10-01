@@ -1,4 +1,4 @@
-<project name="EventManagement" basedir="." default="main">
+<project name="JohnEventos" basedir="." default="main">
 
     <property name="src.dir"     value="src"/>
     <property name="test.dir"    value="test"/>
