@@ -6,12 +6,15 @@ import static org.junit.Assert.fail;
 import java.util.Date;
 
 import model.Evento;
+import model.Ingresso;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 
+import enums.CategoriaIngresso;
+import services.GerenciadorIngressos;
 import services.ValidadorEvento;
 
 public class ValidadorEventoTest {
@@ -112,4 +115,32 @@ public class ValidadorEventoTest {
 
 	}
 	
+	@Test
+	public void testaListaComIngressoDuplicado(){
+		Evento evento = new Evento();
+		GerenciadorIngressos gerador = new GerenciadorIngressos();
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.VIP));
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.PLATEIA));
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.BACKSTAGE));
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.VIP));
+		ValidadorEvento valEvento = new ValidadorEvento();
+		try {
+			valEvento.testaIngressoDuplicado(evento);
+		} catch (Exception e) {
+			Assert.assertTrue(true);
+		}
+		
+	}
+	
+	@Test
+	public void testaListaSemIngressoDuplicado(){
+		Evento evento = new Evento();
+		GerenciadorIngressos gerador = new GerenciadorIngressos();
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.PLATEIA));
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.BACKSTAGE));
+		evento.getIngressos().add(gerador.gerarIngresso(CategoriaIngresso.VIP));
+		ValidadorEvento valEvento = new ValidadorEvento();
+		valEvento.testaIngressoDuplicado(evento);
+
+	}	
 }

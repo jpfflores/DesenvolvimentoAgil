@@ -1,25 +1,15 @@
 package Testes;
 
-import static org.junit.Assert.fail;
-
-import java.util.Date;
-
-import org.apache.commons.lang3.RandomStringUtils;
-import org.joda.time.LocalDate;
 import org.junit.Assert;
 import org.junit.Test;
 
-import model.Ingresso;
-
-
-
-import services.GerenciadorIngressos;
 import enums.CategoriaIngresso;
+import model.Ingresso;
+import services.GerenciadorIngressos;
 
 public class ValidadorIngressoTest {
 
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void testaValorIngressoVip1000(){
 		GerenciadorIngressos gerenciadorIngressos = new GerenciadorIngressos();

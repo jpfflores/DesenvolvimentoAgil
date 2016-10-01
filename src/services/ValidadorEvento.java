@@ -1,9 +1,9 @@
 package services;
 
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import enums.CategoriaIngresso;
 import model.Evento;
 import model.Ingresso;
 import model.ValidacaoEventoException;
@@ -43,7 +43,12 @@ public class ValidadorEvento {
 	}
 
 	public void testaIngressoDuplicado(Evento evento) {
-
+			HashSet<Integer> localIngressos = new HashSet<Integer>();
+			for(Iterator<Ingresso> i = evento.getIngressos().iterator(); i.hasNext(); ) {
+			    localIngressos.add( Integer.valueOf( (int) i.next().getValor()) );
+			}
+			if (evento.getIngressos().size() != localIngressos.size())
+				throw new ValidacaoEventoException("Ingresso duplicado");
 	}
 
 }

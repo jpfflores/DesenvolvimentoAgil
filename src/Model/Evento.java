@@ -1,4 +1,5 @@
 package model;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -7,6 +8,10 @@ public class Evento {
 	private String nome;
 	private Date data;
 	private List<Ingresso> ingressos;
+	
+	public Evento(){
+		this.ingressos = new ArrayList<Ingresso>();
+	}
 
 	public String getNome() {
 		return nome;
