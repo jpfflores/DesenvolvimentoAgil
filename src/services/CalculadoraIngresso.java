@@ -1,7 +1,6 @@
 package services;
 
 import model.EstrategiaDesconto;
-import model.Ingresso;
 
 
 public class CalculadoraIngresso {
@@ -11,3 +10,4 @@ public class CalculadoraIngresso {
 	
 	}
 }
+	
